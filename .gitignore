@@ -32,5 +32,5 @@ bin/
 ### Mac OS ###
 .DS_Store
 
-.allure/allure-2.29.0
+.allure/
 .idea/
