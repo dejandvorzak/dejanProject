@@ -41,6 +41,9 @@ public final class DriverFactory {
         ChromeOptions options = new ChromeOptions();
         if (headless) {
             options.addArguments("--headless=new");
+            // Required to run Chrome as root inside a Docker container (e.g. Jenkins CI agent).
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
         }
         options.addArguments("--remote-allow-origins=*");
 
