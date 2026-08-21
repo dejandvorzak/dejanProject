@@ -40,12 +40,9 @@ pipeline {
     post {
         always {
             junit testResults: 'target/surefire-reports/junitreports/*.xml', allowEmptyResults: true
+            sh 'allure generate target/allure-results --clean -o target/allure-report'
 
-            allure includeProperties: false,
-                   jdk: '',
-                   results: [[path: 'target/allure-results']]
-
-            archiveArtifacts artifacts: 'target/cucumber-report/**, target/allure-results/**', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'target/cucumber-report/**, target/allure-results/**, target/allure-report/**', allowEmptyArchive: true
         }
     }
 }
