@@ -27,9 +27,6 @@ pipeline {
             }
         }
 
-        // Chrome and Firefox run sequentially (not in parallel) so each gets
-        // the full host's CPU/memory for its 4 parallel Cucumber threads —
-        // running both browser matrices at once starves both of them.
         stage('Test - Chrome') {
             agent {
                 dockerfile {
