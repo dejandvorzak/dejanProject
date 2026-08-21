@@ -9,8 +9,8 @@ import java.util.List;
 
 public class Header extends BasePage {
 
-    private final By cartLink = By.className("shopping_cart_link");
-    private final By cartBadge = By.className("shopping_cart_badge");
+    private final By cartLink = By.cssSelector("[data-test='shopping-cart-link']");
+    private final By cartBadge = By.cssSelector("[data-test='shopping-cart-badge']");
 
     public Header(WebDriver driver) {
         super(driver);

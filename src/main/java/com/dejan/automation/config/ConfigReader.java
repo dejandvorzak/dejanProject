@@ -44,10 +44,6 @@ public final class ConfigReader {
         return Boolean.parseBoolean(get("headless"));
     }
 
-    public static int getImplicitWaitSeconds() {
-        return Integer.parseInt(get("implicitWaitSeconds"));
-    }
-
     public static int getExplicitWaitSeconds() {
         return Integer.parseInt(get("explicitWaitSeconds"));
     }

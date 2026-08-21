@@ -10,7 +10,6 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,8 +30,6 @@ public final class DriverFactory {
         };
 
         driver.manage().window().maximize();
-        driver.manage().timeouts()
-                .implicitlyWait(Duration.ofSeconds(ConfigReader.getImplicitWaitSeconds()));
         return driver;
     }
 

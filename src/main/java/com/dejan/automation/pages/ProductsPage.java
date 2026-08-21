@@ -11,11 +11,11 @@ import java.util.List;
 
 public class ProductsPage extends BasePage {
 
-    private final By pageTitle = By.className("title");
-    private final By sortDropdown = By.className("product_sort_container");
-    private final By inventoryItems = By.className("inventory_item");
-    private final By itemName = By.className("inventory_item_name");
-    private final By itemPrice = By.className("inventory_item_price");
+    private final By pageTitle = By.cssSelector("[data-test='title']");
+    private final By sortDropdown = By.cssSelector("[data-test='product-sort-container']");
+    private final By inventoryItems = By.cssSelector("[data-test='inventory-item']");
+    private final By itemName = By.cssSelector("[data-test='inventory-item-name']");
+    private final By itemPrice = By.cssSelector("[data-test='inventory-item-price']");
     private final By itemImage = By.cssSelector(".inventory_item_img img");
 
     public final Header header;
@@ -88,12 +88,12 @@ public class ProductsPage extends BasePage {
     }
 
     public void openProductDetails(String productName) {
-        click(By.xpath("//div[contains(@class, 'inventory_item_name') and text()='" + productName + "']"));
+        click(By.xpath("//div[@data-test='inventory-item-name' and text()='" + productName + "']"));
     }
 
     private WebElement productButton(String productName) {
-        By locator = By.xpath("//div[contains(@class, 'inventory_item_name') and text()='" + productName
-                + "']/ancestor::div[@class='inventory_item']//button");
+        String slug = productName.toLowerCase().replace(" ", "-");
+        By locator = By.cssSelector("[data-test='add-to-cart-" + slug + "'], [data-test='remove-" + slug + "']");
         return waitForClickable(locator);
     }
 }

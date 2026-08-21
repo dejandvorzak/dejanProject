@@ -20,7 +20,6 @@
         <webdrivermanager.version>5.9.2</webdrivermanager.version>
         <allure.version>2.29.0</allure.version>
         <aspectj.version>1.9.22.1</aspectj.version>
-        <slf4j.version>2.0.16</slf4j.version>
     </properties>
 
     <dependencies>
@@ -67,13 +66,6 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectj.version}</version>
-        </dependency>
-
-        <!-- Logging -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>${slf4j.version}</version>
         </dependency>
     </dependencies>
 

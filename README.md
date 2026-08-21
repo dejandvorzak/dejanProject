@@ -41,7 +41,6 @@ Default settings live in [`src/test/resources/config.properties`](src/test/resou
 | `baseUrl`               | `https://www.saucedemo.com/` | Application under test          |
 | `browser`                | `chrome`                     | Browser to run tests in          |
 | `headless`                | `false`                      | Run browser in headless mode     |
-| `implicitWaitSeconds`   | `5`                           | Implicit wait                    |
 | `explicitWaitSeconds`   | `10`                          | Explicit wait                    |
 
 Any value can be overridden at runtime with a `-D` system property, e.g. `-Dbrowser=firefox -Dheadless=true`.
